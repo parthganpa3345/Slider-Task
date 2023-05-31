@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+        }
+        
+        .main {
+            width: 40%;
+            height: 500px;
+            background: rgb(212, 206, 206);
+            margin: 50px auto;
+            display: flex;
+            overflow: hidden;
+        }
+        
+        .x1 {
+            width: 50%;
+            height: 500px;
+            border: 1px solid;
+            position: relative;
+        }
+        
+        .p1 {
+            height: 50px;
+            border: 1px solid red;
+        }
+        
+        button {
+            height: 40px;
+            width: 40px;
+            margin-left: 130px;
+            cursor: pointer;
+        }
+        
+        .ans1 {
+            height: 60%;
+            width: 100%;
+            border: 1px solid green;
+            text-align: left;
+            position: absolute;
+            top: 0;
+            left: 200%;
+            transition: 1s;
+        }
+        /* .gp1:hover .ans1 {
+            left: 100%;
+        } */
+        
+        .ans2 {
+            height: 60%;
+            width: 100%;
+            border: 1px solid green;
+            text-align: left;
+            position: absolute;
+            top: 0;
+            left: 200%;
+            transition: 1s;
+        }
+        
+        .hide {
+            visibility: hidden;
+        }
+        /* .gp2:hover .ans2 {
+            left: 100%;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="x1">
+            <div class="p1">Question 1
+                <button id="btn1" class="gp1" onclick="gps()">^
+                    <div class="ans1">ANS1</div>
+                </button>
+            </div>
+
+            <div class="p1">
+                <div class="show">
+                    Quastion 2
+                    <button id="btn2" class="gp2" onclick="gp()">^
+                    <div class="ans2">ANS2</div>
+                    </button>
+                </div>
+            </div>
+
+            <div class="p1">
+                <div class="hide">
+                    Quastion 2
+                    <button id="btn2" class="gp2" onclick="gp()">^
+                    <div class="ans2">ANS2</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="x1">
+
+        </div>
+    </div>
+
+    <script>
+        p = document.querySelector("#btn1");
+        a = document.querySelector("#btn2");
+        ans1 = document.querySelector(".ans1");
+        ans2 = document.querySelector(".ans2");
+        show = document.querySelector(".show");
+        hide = document.querySelector(".hide");
+
+
+        function gps() {
+            ans1.style.left = "100%"
+            ans2.style.left = "200%"
+            hide.style.visibility = 'visible'
+            show.style.visibility = 'hidden'
+
+        }
+
+        function gp() {
+            ans2.style.left = "100%"
+            ans1.style.left = "200%"
+            hide.style.visibility = "hidden"
+            show.style.visibility = "visible"
+        }
+    </script>
+</body>
+
+</html>
